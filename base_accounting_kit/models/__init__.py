@@ -43,4 +43,4 @@ from . import recurring_payments
 from . import res_company
 from . import res_config_settings
 from . import res_partner
-from . import sale_order
+# Amanus hardening (DEC-VAL-005 / DEC-VAL-044): sale_order disabled (no dependency on sale)

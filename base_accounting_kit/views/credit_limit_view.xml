@@ -18,28 +18,5 @@
             </xpath>
         </field>
     </record>
-<!--  Sale Order Form View Inherited  -->
-    <record id="view_order_form" model="ir.ui.view">
-        <field name="name">sale.order.view.form.inherit.base.accounting.kit</field>
-        <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="has_due" invisible="1"/>
-                <field name="is_warning" invisible="1"/>
-            </xpath>
-            <xpath expr="//header" position="after">
-                <div class="alert alert-info" role="alert" style="height: 40px; margin-bottom:10px;"
-                     invisible="not has_due">
-                    This Customer's due amount is <strong><field name="due_amount"/></strong>.
-                </div>
-            </xpath>
-            <xpath expr="//sheet/div[@name='button_box']" position="after">
-                <div role="alert" class="alert alert-danger" style="height: 40px; margin-bottom:10px;"
-                     invisible="not is_warning">
-                    This customer's <strong>warning limit</strong> has been crossed.
-                </div>
-            </xpath>
-        </field>
-    </record>
+<!--  Amanus hardening (DEC-VAL-005 / DEC-VAL-044): sale.order view inheritance removed  -->
 </odoo>

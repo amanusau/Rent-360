@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from . import test_asset
-from . import test_credit_limit
+# Amanus hardening (DEC-VAL-044): test_credit_limit disabled (depends on sale.order)
 from . import test_recurring
 from . import test_recurring_invoice
 from . import test_followup
